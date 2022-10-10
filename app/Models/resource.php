@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class resource extends Model
+{
+    use HasFactory;
+
+    //Metodo que corresponde a tabla polimorfica:
+    public function resourceable(){
+        return $this->morphTo();
+    }
+}
+ 
