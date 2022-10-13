@@ -15,7 +15,8 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
+    {   
+        Storage::deleteDirectory('cursos');
         //Crea la carpeta en el storage para almacenar las imagenes.
         Storage::makeDirectory('cursos');
 
@@ -23,7 +24,9 @@ class DatabaseSeeder extends Seeder
         $this->call(LevelSeeder::class);
         $this->call(CategorySeeder::class);
         $this->call(PriceSeeder::class);
+        $this->call(PlatformSeeder::class);
         $this->call(CourseSeeder::class);
 
-    }
+    }   
 }
+ 
